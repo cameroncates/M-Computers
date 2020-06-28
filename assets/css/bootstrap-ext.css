@@ -1,0 +1,63 @@
+body {
+    background-color: #fcfcfc;    
+    /* font-family: Roboto, "Noto Naskh Arabic UI", Arial, sans-serif !important; */
+    /* font-family: "Open Sans", sans-serif !important; */
+}
+.ls-1 {
+    letter-spacing: 0.125rem;
+}
+.ls-2 {
+    letter-spacing: 0.25rem;
+}
+.btn-hov:hover {
+    transition: 0.3s;
+    background: rgba(0, 0, 0, 0.055) !important;
+}
+.btn-hov:active {
+    transition: 0.1s;
+    background: rgba(0, 0, 0, 0.1) !important;
+}
+.box-shadow {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+.bd-bottom {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.bd-top {
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+.bd-left {
+    border-left: 1px solid rgba(0, 0, 0, 0.125) !important;
+}
+.bd-right {
+    border-right: 1px solid rgba(0, 0, 0, 0.125) !important;
+}
+.bd-none {
+    border: 1px solid transparent !important;
+}
+.bg-none {
+    background-color: transparent !important;
+}
+.text-sm {
+    font-size: 0.85rem;
+}
+.text-md {
+    font-size: 1.25rem;
+}
+.bd-round {
+    border-radius: 25px 25px 25px 25px;
+}
+.bg-light-2 {
+    background-color: rgba(0, 0, 0, 0.055) !important;
+}
+.bd-radius-5 {
+    border-radius: 5px !important;
+}
+.hov-danger:hover {
+    background-color: #dc3545 !important;
+    border: 1px solid #dc3545 !important;
+    color: white !important;
+}
+.overflow-hidden {
+    overflow: hidden !important;
+}
