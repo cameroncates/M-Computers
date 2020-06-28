@@ -12,7 +12,16 @@ export default {
     components: {
         "basic-info": basic_info,
         "system-info": system_info
-    }
+    },
+    head () {
+        return {
+            title: "M-Computer - The Largest gaming store located in Islamabad",
+            meta: [
+                // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+                { hid: 'description', name: 'description', content: "" }
+            ]
+        }
+    },    
 }
 </script>
 
