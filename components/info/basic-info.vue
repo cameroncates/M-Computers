@@ -3,7 +3,7 @@
     <div class="d-flex basic-info-container">
         <div class="w-50 p-2 flex-shrink-0 basic-info-left">
             <img @load="img_loaded($event)" :src="preview.current" width="100%" class="box-shadow bd-radius-5 transition">
-            <div class="d-flex flex-wrap mt-2 justify-content-center">
+            <div class="mt-2">
                 <img @click="preview.current=img" v-for="(img, i) in preview.all" :key="i" :src="img" width="100px" class="m-2 box-shadow transition" :class="preview.current==img ? 'bd-blue-md p-1' : ''">
             </div>
         </div>
