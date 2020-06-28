@@ -18,7 +18,7 @@
             </div>
             <div class="w-100 mt-5 mb-4">
                 <p class="small d-inline">QTY:</p>
-                <button @click="quantity_dp($event)" class="btn pl-3 pr-3 ml-2 p-1 bg-light-2 box-shadow dropdown-btn">{{quantity.selected}} &nbsp; &#9207;</button>
+                <button @click="quantity_dp($event)" class="btn pl-4 pr-4 ml-2 p-1 bg-light-2 box-shadow dropdown-btn">{{quantity.selected}}</button>
                 <button class="btn btn-primary ml-3 pl-5 pr-5 box-shadow">Add to Cart</button>
             </div>
         </div>
