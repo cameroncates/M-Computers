@@ -1,6 +1,6 @@
 <template>
-<div class="p-absolute bg-white box-shadow   animate__animated  animate__fadeIn animate__faster pt-2 pb-2" :style="styling" ref="container" @mouseleave="remove($event)" @mouseenter="keep()">
-    <button @click="select(item)" :class="selected == item.replace(' ', '-') ? 'bg-primary text-white box-shadow': ''" class="btn btn-block btn-hov text-left p-2 pl-3 pr-3" v-for="(item, i) in list" :key="i" v-html="item"></button>
+<div class="p-absolute bg-dark-2 animate__animated  animate__fadeIn animate__faster pt-2 pb-2" :style="styling" ref="container" @mouseleave="remove($event)" @mouseenter="keep()">
+    <button @click="select(item)" :class="selected == item.replace(' ', '-') ? 'bg-primary text-white': ''" class="btn btn-block btn-hov text-left p-2 pl-3 pr-3" v-for="(item, i) in list" :key="i" v-html="item"></button>
 </div>
 </template>
 
@@ -81,5 +81,7 @@ export default {
 </script>
 
 <style>
-
+.bg-dark-3 {
+    background: #1c1c1c !important;
+}
 </style>

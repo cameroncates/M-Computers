@@ -1,6 +1,6 @@
 <template>
 <div class="container-fluid p-0">
-    <div class="d-flex bd-bottom bg-white justify-content-between pl-3 pr-3">
+    <div class="d-flex bd-bottom bg-dark justify-content-between pl-3 pr-3">
         <div class="align-self-center">
             <button @click="$router.push('/')" class="btn pt-4 pb-4"><b>M-Computers</b></button>
         </div>

@@ -1,17 +1,17 @@
 <template>
 <div class="container-fluid mt-5">
     <div class="d-flex flex-wrap justify-content-center align-items-end">
-        <div @click="open(item.title)" v-for="(item, i) in list" :key="i" class="m-4 bg-white box-shadow bd-radius-5 prebuild-card" style="width:320px">
-            <div class="border overflow-hidden">
+        <div @click="open(item.title)" v-for="(item, i) in list" :key="i" class="m-4 bg-dark bd-radius-5 prebuild-card" style="width:320px">
+            <div class="overflow-hidden">
                 <img :src="item.thumbnail" width="100%" @load="img_loaded($event)" class="d-none" alt="">
             </div>
             <div class="p-2">
                 <div class="container-fluid bd-bottom mb-4">
-                <h6 class="mt-4 pb-3 text-center">{{item.title}}</h6>
+                <h6 class="mt-4 pb-3 text-center text-white">{{item.title}}</h6>
                 <table class="table table-borderless prebuild-table">
                     <tbody>
                         <tr v-for="(specs, j) in item.specification" :key="j">
-                            <td class="small" v-for="(spec, k) in specs" :key="k">{{spec}}</td>
+                            <td class="small text-light" v-for="(spec, k) in specs" :key="k">{{spec}}</td>
                         </tr>
                     </tbody>
                 </table>

@@ -57,7 +57,7 @@ export default {
 @media only screen and (max-width: 970px) {
     .content-2-card {
         width: 100% !important;
-        margin-bottom: 10rem !important;
+        margin-bottom: 2.5rem !important;
     }
     .content-2-container {
         flex-wrap: wrap !important;

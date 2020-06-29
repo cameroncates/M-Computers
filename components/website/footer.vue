@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid bg-white p-3 border mt-5">
+<div class="container-fluid bg-dark p-3 bd-top mt-5">
     <p class="w-75 m-auto">&copy; {{year}} M-Computers. All Rights Reserved.</p>
 </div>
 </template>

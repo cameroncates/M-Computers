@@ -19,6 +19,7 @@ export default {
     ]
   },
   script: [
+    { src: '/include.js'},
     { src: "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"},
     { src: "https://unpkg.com/aos@next/dist/aos.js"},
   ],

@@ -7,7 +7,7 @@
     </div>
     <div class="w-100 text-center mt-2">
         <button v-for="(item, j) in list" :key="j" class="btn pl-2 pr-2" @click="i=j">
-            <span class="material-icons">{{j!=i ? 'panorama_fish_eye' : 'lens'}}</span>
+            <span class="material-icons text-sm">{{j!=i ? 'panorama_fish_eye' : 'lens'}}</span>
         </button>
     </div>
 </div>
@@ -45,5 +45,4 @@ export default {
 </script>
 
 <style>
-
 </style>
