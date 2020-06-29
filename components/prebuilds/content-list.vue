@@ -7,7 +7,7 @@
             </div>
             <div class="p-2">
                 <div class="container-fluid bd-bottom mb-4">
-                <h6 class="mt-4 pb-3 text-center text-white">{{item.title}}</h6>
+                <h6 class="mt-4 pb-3 text-center">{{item.title}}</h6>
                 <table class="table table-borderless prebuild-table">
                     <tbody>
                         <tr v-for="(specs, j) in item.specification" :key="j">

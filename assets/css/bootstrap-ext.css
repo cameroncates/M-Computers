@@ -62,15 +62,15 @@ body * {
     overflow: hidden !important;
 }
 .btn-primary {
-    background: #226b35 !important;
-    border: 1px solid #226b35 !important;
+    background: #4CAF50 !important;
+    border: 1px solid #4CAF50 !important;
     color: white !important;
 }
 .text-primary {
-    color: #226b35 !important;
+    color: #4CAF50 !important;
 }
 .bg-primary {
-    background-color: #226b35 !important;
+    background-color: #4CAF50 !important;
 }
 .border {
     border: 1px solid rgba(255, 255, 255, 0.075) !important;

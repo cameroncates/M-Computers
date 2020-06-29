@@ -1,28 +1,26 @@
 <template>
 <div class="container-fluid text-center mt-4">
-    <div class="d-flex basic-info-container" v-if="!preview.lg_size">
-        <div class="p-2 flex-shrink-0 basic-info-left transition">
-            <img @click="preview.lg_size=true" @load="img_loaded($event)" :src="preview.current" width="100%" class="bd-radius-5">
+    <div class="d-flex basic-info-container">
+        <div class="w-50 p-2 flex-shrink-0 basic-info-left">
+            <img @load="img_loaded($event)" :src="preview.current" width="100%" class=" bd-radius-5 transition">
             <div class="mt-2">
-                <img @click="preview.current=img" v-for="(img, i) in preview.all" :key="i" :src="img" width="100px" class="m-2 transition" :class="preview.current==img ? 'bd-blue-md p-1' : ''">
+                <img @click="preview.current=img" v-for="(img, i) in preview.all" :key="i" :src="img" width="100px" class="m-2  transition" :class="preview.current==img ? 'bd-blue-md p-1' : ''">
             </div>
         </div>
-        <div class="pl-3 pt-4 w-100 text-left" :style="style.right">
-            <h4 class="text-left text-primary font-weight-normal">{{title}}</h4>
-            <div class="w-100 mt-4">
-                <!-- <p v-for="(item, i) in info.quick" :key="i" class="small pb-0 pt-0 mt-0 mb-1">
-                    <strong>{{ item.split(":")[0] }}</strong>
-                    <span> : {{ item.split(":")[1] }}</span>
-                </p> -->
+        <div class="pl-3 w-100 mt-4 text-left">
+            <div class="d-flex justify-content-between">
+                <h1 class="text-left font-weight-normal mb-5 text-primary display-4 font-weight-bold">{{title}}</h1>
             </div>
-            <system-info />
+            <h2 class="text-left text-left w-50 mb-5">Rs. 1822.00</h2>
+            <div class="w-100 mt-5 mb-4">
+                <!-- <p class="small d-inline">QTY:</p> -->
+                <!-- <button @click="quantity_dp($event)" class="btn pl-4 pr-4 ml-2 p-1 bg-dark-2 dropdown-btn">{{quantity.selected}}</button> -->
+                <button class="btn btn-primary pl-5 pr-5 mr-3 text-lg">Add to Cart</button>
+            </div>
+            <div class="w-100 mt-4 mb-4">
+                <button class="btn btn-primary pl-5 pr-5 mr-3 text-lg">Customize</button>
+            </div>
         </div>
-    </div>
-    <div class="p-absolute w-100 animate__animated  animate__zoomIn animate__faster" :style="style.full_img" v-if="preview.lg_size">
-        <div class="w-100 bg-dark-2 text-right">
-            <button class="btn p-3 text-right material-icons" @click="preview.lg_size=false">clear</button>
-        </div>
-        <img :src="preview.current" width="100%" alt="">
     </div>
 </div>
 </template>
@@ -40,31 +38,16 @@ import img8 from '@/assets/images/8.jpg'
 import vue from 'vue'
 import $ from 'jquery'
 import dropdown_list from '@/components/website/dropdown-list.vue'
-import system_info from '@/components/info/system-info.vue'
-
 export default {
     components: {
-        "system-info": system_info,
         dropdown_list
     },
     data() {
         return {
-            style: {
-                right: {
-                    maxHeight: 500 + 'px',
-                    overflow: 'auto'
-                },
-                full_img: {
-                    top: '0px',
-                    left: '0px',
-                    position: 'absolute'
-                }
-            },
             title: "",
             preview: {
                 current: img8,
-                all: [img1, img2, img3, img4, img5, img6, img7, img8],
-                lg_size: false
+                all: [img1, img2, img3, img4, img5, img6, img7, img8]
             },
             quantity: {
                 list: ["1", "2", "3", "4", "5"],
@@ -96,27 +79,21 @@ export default {
                 instance
             }
         },
-        system_info_height() {
-            this.style.right.maxHeight = ($(window).height() - 100) + 'px'
-        }
+
     },
     mounted() {
         this.title = this.$route.params.id.split("-").join(" ").toUpperCase()
-        this.system_info_height()
-        $(window).resize(() => {
-            this.system_info_height()
-        })
     }
 
 }
 </script>
 
 <style>
-.basic-info-left {
-    width: 40%;
+.text-lg {
+    font-size: 1.5rem;
 }
 .bd-blue-md {
-    border: 0.125rem solid #226b35;
+    border: 0.125rem solid #4CAF50;
 }
 .transition {
     transition: 0.3s;
