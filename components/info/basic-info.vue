@@ -64,7 +64,7 @@ export default {
             preview: {
                 current: img8,
                 all: [img1, img2, img3, img4, img5, img6, img7, img8],
-                lg_size: true
+                lg_size: false
             },
             quantity: {
                 list: ["1", "2", "3", "4", "5"],
