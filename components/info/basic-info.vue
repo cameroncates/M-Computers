@@ -1,6 +1,6 @@
 <template>
 <div class="container-fluid text-center mt-4">
-    <div class="d-flex basic-info-container">
+    <div class="d-flex basic-info-container" v-if="!preview.lg_size">
         <div class="p-2 flex-shrink-0 basic-info-left transition">
             <img @click="preview.lg_size=true" @load="img_loaded($event)" :src="preview.current" width="100%" class="bd-radius-5">
             <div class="mt-2">
