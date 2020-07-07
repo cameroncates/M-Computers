@@ -2,7 +2,7 @@
 <div class="container-fluid pt-5 pb-5 bg-dark">
     <div class="m-auto p-2 prebuilds-search-container">
         <div class="w-100 mt-5 mb-5"></div>
-        <h5 class="text-center ls-2">Look for products in our store with one search engine, <br> categorize by different variety.</h5>
+        <h4 class="text-center ls-1 text-white">Look for products in our store with one search engine, <br> categorize by different variety.</h4>
         <div class="w-100 mt-2 mb-2"></div>
         <p class="w-100 m-auto text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio enim tempora, nostrum officiis ullam amet accusamus, quas aspernatur dolor reprehenderit similique quidem distinctio consequatur illo iure exercitationem sint velit quo!</p>
         <div class="w-100 mb-4"></div>

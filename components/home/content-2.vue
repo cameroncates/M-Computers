@@ -1,11 +1,13 @@
 <template>
 <div class="container-fluid mt-5" :style="style.container">
-    <h5 class="w-100 text-center">{{title}}</h5>
+    <h1 class="w-100 text-center text-white ls-1">{{title}}</h1>
     <div class="w-100 d-flex justify-content-center content-2-container align-items-end">
         <div v-for="(item, i) in list" :key="i" class="m-5 content-2-card">
             <img :src="item.thumbnail" width="100%" alt="" class="p-2">
             <div class="w-100 text-center mt-3">
-                <button @click="plateform_selected(item.title)" class="btn pt-2 pb-2 btn-block border btn-hov content-2-btn">{{item.title}}</button>
+                <h4 class="mt-5 text-white">{{item.title}}</h4>
+                <p class="mt-4 text-primary">Rs. 1,231.00</p>
+                <!-- <button @click="plateform_selected(item.title)" class="btn pt-2 pb-2 btn-block border btn-hov content-2-btn">{{item.title}}</button> -->
             </div>
         </div>
     </div>
@@ -21,7 +23,7 @@ export default {
     props: {
         title: {
             required: false,
-            default: "Build your own PC"
+            default: "Featured Products"
         }
     },
     data() {
@@ -30,6 +32,7 @@ export default {
                 { thumbnail: intel, title: 'Intel Gaming PC'},
                 { thumbnail: amd, title: 'AMD Gaming PC'},
                 { thumbnail: laptop, title: 'Laptops'},
+                { thumbnail: amd, title: 'AMD Gaming PC'},
             ],
             style: {
                 container: {

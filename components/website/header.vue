@@ -5,11 +5,11 @@
             <button @click="$router.push('/')" class="btn pt-4 pb-4"><b>M-Computers</b></button>
         </div>
         <div class="text-right header-right">
-            <div class="lg-screen">
+            <div class="lg-screen d-inline">
                 <button @click="link_clicked($event, i)" class="btn btn-hov p-4 dropdown-btn" v-for="(item, i) in links" :key="i" v-html="item"></button>
-                <button @click="signup_or_signin($event)" class="btn btn-primary ml-4 pl-4 pr-4 box-shadow dropdown-btn">Account</button>
             </div>
             <button @click="open_menu($event)" class="btn btn-hov menu d-none material-icons dropdown-btn p-4">menu</button>
+            <button @click="signup_or_signin($event)" class="btn btn-primary ml-4 pl-4 pr-4 box-shadow dropdown-btn">Account</button>
         </div>
     </div>
 </div>
@@ -69,7 +69,7 @@ export default {
 <style>
 @media only screen and (max-width: 910px) {
   .header-right .lg-screen {
-    display: none;
+    display: none !important;
   }
   .header-right .menu {
       display: inline-block !important;

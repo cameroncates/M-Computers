@@ -1,10 +1,10 @@
 <template>
 <div class="container-fluid bd-top p-4">
-    <div class="d-flex">
-        <div class="w-50"></div>
-        <div class="w-50">
+    <div class="d-flex flex-wrap">
+        <div class="system-info-left"></div>
+        <div class="system-info-right">
             <h3 class="mb-4 text-white">System Information</h3>            
-            <table class="table table-borderless table-striped w-100">
+            <table class="table table-borderless w-100">
                 <thead>
                     <tr class="bg-primary">
                         <th><h3 class="text-white">Component</h3></th>
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr v-for="(item, i) in info" :key="i" class="bd-bottom">
                         <td class="font-weight-bold">{{item.split(":")[0]}}</td>
-                        <td class="">{{item.split(":")[1]}}</td>
+                        <td>{{item.split(":")[1]}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -54,5 +54,12 @@ export default {
 </script>
 
 <style>
-
+.system-info-left, .system-info-right {
+    width: 50% !important;
+}
+@media only screen and (max-width: 750px) {
+    .system-info-left, .system-info-right {
+        width: 100% !important;
+    }
+}
 </style>

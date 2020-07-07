@@ -7,7 +7,7 @@
         <p class="small w-75 m-auto">Choose from hunderends of unique pre-builds PC at affordable rates</p>
     </div>
     <div class="right text-center p-2 bd-left">
-        <button @click="$router.push('/select-plateform')" class="btn material-icons text-primary mb-3 btn-hov" :style="style.icon">construction</button>
+        <button @click="$router.push('/build-your-own-pc/')" class="btn material-icons text-primary mb-3 btn-hov" :style="style.icon">construction</button>
         <h5>Build your own PC</h5>
         <p class="small w-75 m-auto">Shows systems that you can customize and ship within 10 working days</p>
     </div>

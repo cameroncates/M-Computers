@@ -1,24 +1,36 @@
 <template>
-<div class="container-fluid text-center mt-4">
+<div class="container-fluid text-center mt-5">
     <div class="d-flex basic-info-container">
-        <div class="w-50 p-2 flex-shrink-0 basic-info-left">
-            <img @load="img_loaded($event)" :src="preview.current" width="100%" class=" bd-radius-5 transition">
+        <div class="p-2 flex-shrink-0 basic-info-left">
+            <img @load="img_loaded($event)" :src="preview.current" width="100%" class=" bd-radius-5 p-5 transition">
             <div class="mt-2">
-                <img @click="preview.current=img" v-for="(img, i) in preview.all" :key="i" :src="img" width="100px" class="m-2  transition" :class="preview.current==img ? 'bd-blue-md p-1' : ''">
+                <img @click="preview.current=img" v-for="(img, i) in preview.all" :key="i" :src="img" width="100px" class="m-2 transition" :class="preview.current==img ? 'bd-blue-md p-1' : ''">
             </div>
         </div>
-        <div class="pl-3 w-100 mt-4 text-left">
-            <div class="d-flex justify-content-between">
-                <h1 class="text-left font-weight-normal mb-5 text-primary display-4 font-weight-bold">{{title}}</h1>
+        <div class="pl-4 w-100 mt-4 text-left bd-left">
+            <div class="w-75">
+                <h1 class="text-primary">{{title.split("-").join(" ").toUpperCase()}}</h1>
+                <p class="text-md">Rs. 1822.00</p>
+                <p class="mt-5 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt facilis iusto officia, sapiente, ad possimus quibusdam iste odit laudantium unde minus non eius in voluptate impedit exercitationem! Inventore, enim animi.</p>
+                <p v-for="(item, i) in info.quick" :key="i" class="text-sm mb-2">
+                    <strong>{{ item.split(":")[0] }} :</strong>
+                    <span>{{ item.split(":")[1] }}</span>
+                </p>
             </div>
-            <h2 class="text-left text-left w-50 mb-5">Rs. 1822.00</h2>
-            <div class="w-100 mt-5 mb-4">
-                <!-- <p class="small d-inline">QTY:</p> -->
-                <!-- <button @click="quantity_dp($event)" class="btn pl-4 pr-4 ml-2 p-1 bg-dark-2 dropdown-btn">{{quantity.selected}}</button> -->
-                <button class="btn btn-primary pl-5 pr-5 mr-3 text-lg">Add to Cart</button>
+            <div class="w-100 mt-5">
+                <quantity-button />
             </div>
             <div class="w-100 mt-4 mb-4">
-                <button class="btn btn-primary pl-5 pr-5 mr-3 text-lg">Customize</button>
+                <button class="btn btn-primary pl-5 pr-5 mr-3">
+                    <span class="material-icons text-white btn p-0 mr-2">shopping_cart</span>
+                    <span class="text-white btn p-0 text-md">Add to Cart</span>
+                </button>
+            </div>
+            <div class="w-100 mt-4 mb-4">
+                <button @click="$router.push('/build-your-own-pc/'+title)" class="btn btn-primary pl-5 pr-5 mr-3">
+                    <span class="material-icons text-white btn p-0 mr-2">create</span>
+                    <span class="text-white btn p-0 text-md">Customize</span>
+                </button>
             </div>
         </div>
     </div>
@@ -26,21 +38,23 @@
 </template>
 
 <script>
-import img1 from '@/assets/images/1.jpg'
-import img2 from '@/assets/images/2.jpg'
-import img3 from '@/assets/images/3.jpg'
-import img4 from '@/assets/images/4.jpg'
-import img5 from '@/assets/images/5.jpg'
-import img6 from '@/assets/images/6.jpg'
-import img7 from '@/assets/images/7.jpg'
-import img8 from '@/assets/images/8.jpg'
+import img1 from '@/assets/images/amd.jpg'
+import img2 from '@/assets/images/intel.png'
+import img3 from '@/assets/images/laptop.png'
+import img4 from '@/assets/images/amd.jpg'
+import img5 from '@/assets/images/intel.png'
+import img6 from '@/assets/images/amd.jpg'
+import img7 from '@/assets/images/laptop.png'
+import img8 from '@/assets/images/intel.png'
 
 import vue from 'vue'
 import $ from 'jquery'
 import dropdown_list from '@/components/website/dropdown-list.vue'
+import quantity_button from '@/components/website/quantity-button.vue'
 export default {
     components: {
-        dropdown_list
+        dropdown_list,
+        "quantity-button": quantity_button
     },
     data() {
         return {
@@ -82,7 +96,7 @@ export default {
 
     },
     mounted() {
-        this.title = this.$route.params.id.split("-").join(" ").toUpperCase()
+        this.title = this.$route.params.id
     }
 
 }
@@ -92,11 +106,11 @@ export default {
 .text-lg {
     font-size: 1.5rem;
 }
-.bd-blue-md {
-    border: 0.125rem solid #4CAF50;
-}
 .transition {
     transition: 0.3s;
+}
+.basic-info-left {
+    width: 45% !important;
 }
 @media only screen and (max-width: 744px) {
   .basic-info-container {
